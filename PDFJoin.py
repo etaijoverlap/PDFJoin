@@ -24,7 +24,7 @@ except ImportError:
 def pdf_cat(input_files, output_stream):
     writer = PdfFileWriter()
     for input_file in input_files:
-        reader = PdfFileReader(input_file)
+        reader = PdfFileReader(input_file, strict=False)
         for n in range(reader.getNumPages()):
             writer.addPage(reader.getPage(n))
     writer.write(output_stream)
@@ -152,7 +152,7 @@ class PdfJoin(object):
                 raise
 
 if __name__ == '__main__':
-    app = wx.App()
+    app = wx.App()    
     window = PdfJoin()
     window.show()
     app.MainLoop()
