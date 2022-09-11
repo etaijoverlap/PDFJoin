@@ -11,7 +11,7 @@ import sys
 import os
 import os.path as path
 
-sys.path.append(path.join(os.getcwd(),"env", "Lib", "site-packages"))
+sys.path.append(path.join(os.getcwd(),"pdfjoinenv", "Lib", "site-packages"))
 
 import wx
 import wx.lib.scrolledpanel
